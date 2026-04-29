@@ -32,7 +32,7 @@ export EDITOR='pico'
 export VISUAL='code'
 
 alias bat="batcat"
-alias ls="eza --group-directories-first"
+alias ls="eza --group-directories-first --icons"
 alias l="eza -lah --group-directories-first --git"
 alias la="eza -lAh --group-directories-first --git"
 alias ll="eza -lh --group-directories-first --git"

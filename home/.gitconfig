@@ -1,6 +1,12 @@
 [include]
 	path = ~/.gitconfig.local
 
+[credential]
+        helper = /mnt/c/Program\\ Files/Git\\ Credential\\ Manager/git-credential-manager.exe
+
+[credential "https://dev.azure.com"]
+        useHttpPath = true
+
 [core]
 	pager = delta
 
