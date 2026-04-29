@@ -26,6 +26,20 @@ link_file() {
   echo "link  $target_path"
 }
 
+ensure_file() {
+  local target_path="$1"
+
+  mkdir -p "$(dirname "$target_path")"
+
+  if [ ! -e "$target_path" ]; then
+    : > "$target_path"
+    echo "create $target_path"
+  fi
+}
+
 link_file "$ROOT/home/.zshrc" "$HOME_DIR/.zshrc"
 link_file "$ROOT/home/.gitconfig" "$HOME_DIR/.gitconfig"
 link_file "$ROOT/config/starship.toml" "$CONFIG_DIR/starship.toml"
+
+ensure_file "$HOME_DIR/.gitconfig.local"
+ensure_file "$HOME_DIR/.zshrc.local"
