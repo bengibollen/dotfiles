@@ -1,0 +1,9 @@
+[user]
+	name = Your Name
+	email = you@example.com
+
+[credential]
+	helper = /path/to/your/credential-helper
+
+[credential "https://dev.azure.com"]
+	useHttpPath = true

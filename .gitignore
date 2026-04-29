@@ -1,0 +1,3 @@
+*.bak
+home/.gitconfig.local
+home/.zshrc.local
