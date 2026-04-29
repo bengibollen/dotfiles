@@ -38,6 +38,15 @@ alias la="eza -lAh --group-directories-first --git"
 alias ll="eza -lh --group-directories-first --git"
 alias tree="eza --tree --group-directories-first"
 
+dotpush() {
+  local repo="$HOME/dotfiles"
+  local message="${*:-Update dotfiles}"
+
+  git -C "$repo" add -A &&
+    git -C "$repo" commit -m "$message" &&
+    git -C "$repo" push
+}
+
 eval "$(starship init zsh)"
 
 # Keep syntax highlighting last so it can wrap the final widgets cleanly.
