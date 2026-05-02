@@ -4,15 +4,16 @@ add_newline = true
 
 format = """
 [╭╴](fg:4)\
+[](fg:4)\
 $os\
 $username\
+$directory\
 $hostname\
 $localip\
 $shlvl\
 $singularity\
 $kubernetes\
 $nats\
-$directory\
 $vcsh\
 $fossil_branch\
 $fossil_metrics\
@@ -37,16 +38,17 @@ $direnv\
 $env_var\
 $custom\
 $sudo\
-$cmd_duration\
 [](fg:4)\
 $fill\
 [](fg:4)\
 $jobs\
 $battery\
+$cmd_duration\
 $time\
 $status\
 $container\
 $netns\
+[](fg:4)\
 $line_break\
 [╰╴](fg:4)\
 $shell\
@@ -54,7 +56,7 @@ $character"""
 
 [os]
 disabled = false
-style = 'fg:1'
+style = 'fg:0 bg:4'
 
 [dotnet]
 disabled = false
@@ -63,29 +65,38 @@ symbol = " "
 
 [username]
 show_always = true
-format = "[$user]($style) "
+style_user = 'fg:0 bg:4'
+format = "[$user ]($style)"
 
 [directory]
 truncation_length = 4
 truncate_to_repo = true
+format = '[$path[$read_only]($read_only_style) ]($style)'
+style = 'fg:0 bg:4'
+read_only_style = 'fg:9 bg:4'
 read_only = " 󰌾"
 
 [time]
 disabled = false
+format = '[ \[$time\] ]($style)'
+style = 'fg:0 bg:4'
 
 [git_branch]
-format = "[$symbol$branch]($style) "
+format = "[ ](bg:4 fg:0)[$symbol$branch ]($style)"
+style = "bg:4"
 symbol = " "
 
 [git_status]
-format = "([$all_status$ahead_behind]($style) )"
+format = "([$all_status$ahead_behind]($style))"
+style = "bg:4 fg:9"
 
 [fill]
 symbol = " "
 
 [cmd_duration]
 min_time = 500
-format = "[$duration]($style) "
+style = 'fg:0 bg:4'
+format = "[$duration ]($style)"
 
 [character]
 success_symbol = "[❯](bold green)"
