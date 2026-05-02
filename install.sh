@@ -39,6 +39,7 @@ ensure_file() {
 
 link_file "$ROOT/home/.zshrc" "$HOME_DIR/.zshrc"
 link_file "$ROOT/home/.gitconfig" "$HOME_DIR/.gitconfig"
+link_file "$ROOT/config/nano" "$CONFIG_DIR/nano"
 link_file "$ROOT/config/starship.toml" "$CONFIG_DIR/starship.toml"
 
 ensure_file "$HOME_DIR/.gitconfig.local"

@@ -6,6 +6,7 @@ Portable shell and Git configuration extracted from this machine.
 
 - `home/`: files linked into `$HOME`
 - `config/`: files linked into `$HOME/.config`
+  - `nano/`: GNU nano config and syntax definitions
 - `install.sh`: creates symlinks with backups
 
 ## Install
