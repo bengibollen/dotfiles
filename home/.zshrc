@@ -6,6 +6,16 @@ fi
     export PATH="/snap/bin:$PATH"
   fi
 
+# Less colors
+export LESS_TERMCAP_md=$'\e[01;38;5;74m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[38;5;246m'
+export LESS_TERMCAP_us=$'\e[04;38;5;146m'
+export LESS_TERMCAP_ue=$'\e[0m'
+
+
+
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME=""
 

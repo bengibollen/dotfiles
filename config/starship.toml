@@ -17,11 +17,6 @@ $nats\
 $vcsh\
 $fossil_branch\
 $fossil_metrics\
-$git_branch\
-$git_commit\
-$git_state\
-$git_metrics\
-$git_status\
 $hg_branch\
 $hg_state\
 $pijul_channel\
@@ -38,7 +33,13 @@ $direnv\
 $env_var\
 $custom\
 $sudo\
-[](fg:4)\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+${custom.git_end}\
+${custom.normal_end}\
 $fill\
 [](fg:4)\
 $jobs\
@@ -53,6 +54,18 @@ $line_break\
 [╰╴](fg:4)\
 $shell\
 $character"""
+
+[custom.git_end]
+when = 'git rev-parse --is-inside-work-tree'
+command = 'printf ""'
+format = '[](fg:2)'
+style = ''
+
+[custom.normal_end]
+when = '! git rev-parse --is-inside-work-tree'
+command = 'printf ""'
+format = '[](fg:4)'
+style = ''
 
 [os]
 disabled = false
@@ -78,17 +91,17 @@ read_only = " 󰌾"
 
 [time]
 disabled = false
-format = '[ \[$time\] ]($style)'
+format = '[  \[$time\] ]($style)'
 style = 'fg:0 bg:4'
 
 [git_branch]
-format = "[ ](bg:4 fg:0)[$symbol$branch ]($style)"
-style = "bg:4"
+format = "[ ](bg:2 fg:4)[$symbol$branch ]($style)"
+style = "bg:2"
 symbol = " "
 
 [git_status]
 format = "([$all_status$ahead_behind]($style))"
-style = "bg:4 fg:9"
+style = "bg:9 fg:0"
 
 [fill]
 symbol = " "
@@ -96,7 +109,7 @@ symbol = " "
 [cmd_duration]
 min_time = 500
 style = 'fg:0 bg:4'
-format = "[$duration ]($style)"
+format = "[$duration]($style)"
 
 [character]
 success_symbol = "[❯](bold green)"
