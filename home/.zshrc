@@ -2,9 +2,14 @@ if [ -d "$HOME/.local/bin" ] && [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
   export PATH="$HOME/.local/bin:$PATH"
 fi
 
-  if [ -d /snap/bin ] && [[ ":$PATH:" != *":/snap/bin:"* ]]; then
-    export PATH="/snap/bin:$PATH"
-  fi
+if [ -d /snap/bin ] && [[ ":$PATH:" != *":/snap/bin:"* ]]; then
+  export PATH="/snap/bin:$PATH"
+fi
+
+export PAGER='less'
+export MANPAGER="less -R"
+export MANROFFOPT='-P -c'
+export LESS="-iMR"
 
 # Less colors
 export LESS_TERMCAP_md=$'\e[01;38;5;74m'
@@ -80,3 +85,13 @@ dotpush() {
 if [ -f "$HOME/.zshrc.local" ]; then
   source "$HOME/.zshrc.local"
 fi
+# XDG base directories
+: "${XDG_CONFIG_HOME:=$HOME/.config}"
+: "${XDG_DATA_HOME:=$HOME/.local/share}"
+: "${XDG_STATE_HOME:=$HOME/.local/state}"
+: "${XDG_CACHE_HOME:=$HOME/.cache}"
+
+export XDG_CONFIG_HOME
+export XDG_DATA_HOME
+export XDG_STATE_HOME
+export XDG_CACHE_HOME

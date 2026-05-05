@@ -58,7 +58,7 @@ $character"""
 [custom.git_end]
 when = 'git rev-parse --is-inside-work-tree'
 command = 'printf ""'
-format = '[](fg:2)'
+format = '[ ](bg:2)[](fg:2)'
 style = ''
 
 [custom.normal_end]
@@ -95,12 +95,12 @@ format = '[  \[$time\] ]($style)'
 style = 'fg:0 bg:4'
 
 [git_branch]
-format = "[ ](bg:2 fg:4)[$symbol$branch ]($style)"
+format = "[ ](bg:2 fg:4)[$symbol$branch]($style)"
 style = "bg:2"
 symbol = " "
 
 [git_status]
-format = "([$all_status$ahead_behind]($style))"
+format = "([ [$all_status$ahead_behind]($style)](fg:9 bg:2))"
 style = "bg:9 fg:0"
 
 [fill]
