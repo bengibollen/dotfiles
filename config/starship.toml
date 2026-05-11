@@ -3,7 +3,7 @@
 add_newline = true
 
 format = """
-[╭╴](fg:4)\
+[╭─](fg:4)\
 [](fg:4)\
 $os\
 $username\
